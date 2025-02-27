@@ -20,29 +20,15 @@ This project is a **user authentication and referral system** built using **Node
 - **cors** (Cross-Origin Resource Sharing)
 
 ## Installation
-### 1. Clone the Repository
-```sh
-git clone https://github.com/your-repo-url.git
-cd your-project-folder
-```
 
-### 2. Install Dependencies
+### 1. Install Dependencies
 ```sh
 npm install
 ```
 
-### 3. Create a `.env` File
-Create a `.env` file in the root directory and add the following environment variables:
-```env
-PORT=3000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-FRONTEND_URL=http://localhost:3000
-```
-
 ### 4. Start the Server
 ```sh
-npm start
+node server1.js
 ```
 The server will start at `http://localhost:3000`.
 
@@ -51,64 +37,32 @@ The server will start at `http://localhost:3000`.
 ### **Authentication APIs**
 #### **User Registration**
 **POST** `/api/register`
-```json
-{
-  "username": "JohnDoe",
-  "email": "johndoe@example.com",
-  "password": "Secure@123",
-  "referralCode": "optional-referral-code"
-}
-```
+![image](https://github.com/user-attachments/assets/56140229-3dd5-4840-8971-39b99bef1019)
 
 #### **User Login**
 **POST** `/api/login`
-```json
-{
-  "email": "johndoe@example.com",
-  "password": "Secure@123"
-}
-```
+![image](https://github.com/user-attachments/assets/7eaa5c76-7300-4d2f-9d91-adde734a811a)
 
 #### **Forgot Password**
 **POST** `/api/forgot-password`
-```json
-{
-  "email": "johndoe@example.com"
-}
-```
+![image](https://github.com/user-attachments/assets/7f4992ce-df6a-4dfc-b024-8af65958f1ab)
+
 _Response will include a reset token._
 
 #### **Reset Password**
 **POST** `/api/reset-password`
-```json
-{
-  "token": "reset_token_received",
-  "newPassword": "NewSecure@123"
-}
-```
+![image](https://github.com/user-attachments/assets/fa33dc6f-375e-4e9c-b29f-5ffd7c9f2bb8)
 
 ### **Referral System APIs**
 #### **Get User's Referrals**
 **GET** `/api/referrals`
 _Response:_
-```json
-[
-  {
-    "username": "JaneDoe",
-    "email": "janedoe@example.com"
-  }
-]
-```
+![image](https://github.com/user-attachments/assets/74da5687-6339-4927-b749-65f8028a2a3d)
 
 #### **Referral Statistics**
 **GET** `/api/referral-stats`
 _Response:_
-```json
-{
-  "totalReferrals": 5,
-  "successfulSignUps": 3
-}
-```
+![image](https://github.com/user-attachments/assets/e7122f30-f1f0-41f0-8098-b833d6edbeba)
 
 ## Notes
 - The **password must be strong**, containing at least **one uppercase letter, one lowercase letter, one number, one special character, and a minimum of 8 characters**.
@@ -119,9 +73,6 @@ _Response:_
 - Implement **reward-based referral incentives**.
 - Add **OAuth authentication** (Google, GitHub, etc.).
 - Improve **email verification system**.
-
-## License
-This project is licensed under the **MIT License**.
 
 ---
 _Developed with ❤️ using Node.js & MongoDB._
